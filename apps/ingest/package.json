@@ -1,0 +1,15 @@
+{
+  "name": "ingest",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "axios": "^1.6.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "ts-node": "^10.9.1"
+  }
+}

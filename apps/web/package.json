@@ -1,0 +1,17 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build"
+  },
+  "dependencies": {
+    "@sveltejs/kit": "^1.30.0",
+    "svelte": "^4.2.9",
+    "tailwindcss": "^3.4.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
