@@ -1,0 +1,17 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "This repository contains a minimal starting point for AgoraNet, a privacy-focused, democratically governed social media platform. The code in this repository is only a prototype meant to illustrate basic ideas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "fastify": "^5.4.0"
+  }
+}
