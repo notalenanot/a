@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  neo4j:
+    image: neo4j:5
+    env_file: .env
+    ports:
+      - '7474:7474'
+      - '7687:7687'
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - '6333:6333'
+  api:
+    build: ./packages/core-api
+    env_file: .env
+    depends_on:
+      - neo4j
+      - qdrant
+    ports:
+      - '4000:4000'
+  web:
+    build: ./apps/web
+    depends_on:
+      - api
+    ports:
+      - '5173:3000'

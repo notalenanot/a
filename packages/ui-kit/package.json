@@ -1,0 +1,15 @@
+{
+  "name": "ui-kit",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "svelte": "^4.2.9"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

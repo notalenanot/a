@@ -1,0 +1,13 @@
+name: monorepo-ci
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm -r run build --if-present
+      - run: docker compose -f docker-compose.yml up -d --build api
