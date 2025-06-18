@@ -1,2 +1,3 @@
 # Ignore dataset storage file
 datasets.json
+__pycache__/
