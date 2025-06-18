@@ -1,0 +1,9 @@
+intents:
+  weather:
+    keywords: ["weather", "temperature"]
+    adapter: weather
+  joke:
+    keywords: ["joke", "funny"]
+    adapter: joke
+  fallback:
+    adapter: fallback
