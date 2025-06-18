@@ -1,0 +1,11 @@
+intents:
+  weather:
+    phrases:
+      - weather
+      - temperature
+  joke:
+    phrases:
+      - joke
+      - funny
+  fallback:
+    phrases: []
