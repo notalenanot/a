@@ -20,14 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm run build
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-      - run: pnpm install
-      - run: pnpm build
+      - run: pnpm --dir my-app install
+      - run: pnpm --dir my-app build
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: ./dist
+          path: ./my-app/dist
 
   deploy:
     needs: build
