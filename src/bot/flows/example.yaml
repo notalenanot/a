@@ -1,0 +1,14 @@
+intents:
+  weather:
+    examples:
+      - "what's the weather"
+      - "weather"
+    action: weather
+  joke:
+    examples:
+      - "tell me a joke"
+      - "joke"
+    action: joke
+  fallback:
+    examples: []
+    action: fallback
