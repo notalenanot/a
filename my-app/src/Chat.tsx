@@ -1,5 +1,21 @@
 import { useState } from 'react';
-import { handleInput } from '../../bot/core/engine';
+async function handleInput(input: string): Promise<string> {
+  const text = input.toLowerCase();
+
+  if (text.includes('weather')) {
+    const res = await fetch('/api/weather');
+    const data = await res.json();
+    return data.weather as string;
+  }
+
+  if (text.includes('joke')) {
+    const res = await fetch('/api/joke');
+    const data = await res.json();
+    return data.joke as string;
+  }
+
+  return "I'm not sure how to help with that.";
+}
 
 interface Message {
   from: 'user' | 'bot';
