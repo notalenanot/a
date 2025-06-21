@@ -43,3 +43,7 @@ pnpm dev
 ```
 
 Run `npm run build` to compile the backend to `dist/`.
+
+## Examples
+
+A simple p5.js demo is available in `examples/p5-spiral`. Open `index.html` in a web browser to see the animated spiral.
