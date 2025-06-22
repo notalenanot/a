@@ -1,5 +1,6 @@
 import { getWeather } from '../../api/weather';
 import { getJoke } from '../../api/joke';
+import { findApp, initDefaultApps } from './apps';
 
 /**
  * Routes a user input string to the correct intent.
@@ -10,6 +11,8 @@ import { getJoke } from '../../api/joke';
 export async function handleInput(input: string): Promise<string> {
   const text = input.toLowerCase();
 
+  initDefaultApps();
+
   if (text.includes('weather')) {
     return getWeather();
   }
@@ -18,5 +21,10 @@ export async function handleInput(input: string): Promise<string> {
     return getJoke();
   }
 
-  return "I'm not sure how to help with that.";
+  const app = findApp(text);
+  if (app) {
+    return app.run(text);
+  }
+
+  return "Sorry I can't do that right now.";
 }
