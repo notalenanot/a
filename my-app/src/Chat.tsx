@@ -14,7 +14,11 @@ async function handleInput(input: string): Promise<string> {
     return data.joke as string;
   }
 
-  return "I'm not sure how to help with that.";
+  if (text.includes('uber')) {
+    return 'Requesting a ride via Uber...';
+  }
+
+  return "Sorry I can't do that right now.";
 }
 
 interface Message {
