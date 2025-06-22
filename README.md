@@ -43,3 +43,11 @@ pnpm dev
 ```
 
 Run `npm run build` to compile the backend to `dist/`.
+
+### Running tests
+
+Unit tests are written with Jest. Install dependencies and run:
+
+```bash
+npm test
+```
