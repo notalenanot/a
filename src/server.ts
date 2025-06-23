@@ -2,7 +2,7 @@ import express from 'express';
 import { getJoke } from './api/joke';
 import { getWeather } from './api/weather';
 
-const app = express();
+export const app = express();
 const port = process.env.PORT || 3000;
 
 app.get('/api/joke', async (_, res) => {
@@ -27,6 +27,8 @@ app.get('/api/weather', async (req, res) => {
 
 app.use(express.static('my-app/dist'));
 
-app.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Server listening on http://localhost:${port}`);
+  });
+}
