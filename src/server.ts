@@ -10,7 +10,8 @@ app.get('/api/joke', async (_, res) => {
     const joke = await getJoke();
     res.json({ joke });
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch joke' });
+    const message = err instanceof Error ? err.message : 'Failed to fetch joke';
+    res.status(500).json({ error: message });
   }
 });
 
@@ -21,7 +22,8 @@ app.get('/api/weather', async (req, res) => {
     const weather = await getWeather(lat, lon);
     res.json({ weather });
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch weather' });
+    const message = err instanceof Error ? err.message : 'Failed to fetch weather';
+    res.status(500).json({ error: message });
   }
 });
 
