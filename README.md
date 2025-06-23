@@ -40,6 +40,9 @@ cd my-app
 pnpm install
 pnpm dev
 ```
+The Vite development server proxies requests starting with `/api` to
+`http://localhost:3000`, so make sure the backend is running with
+`npm run dev` in another terminal.
 
 Run `npm run build` to compile the backend to `dist/`.
 
