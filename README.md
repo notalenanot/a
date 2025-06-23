@@ -24,6 +24,12 @@ The backend exposes two endpoints under `/api` which return a random joke and
 current weather information.  The React application located in `my-app/`
 includes a simple chat UI that calls these endpoints.
 
+Additional capabilities include:
+- Voice input and output powered by the Web Speech API.
+- Basic multi-language support via a small i18n dictionary.
+- Embedding-based search with cosine similarity.
+
+
 ## Development
 
 Install dependencies and start the development server:
