@@ -1,24 +1,13 @@
 import { useState } from 'react';
-async function handleInput(input: string): Promise<string> {
-  const text = input.toLowerCase();
 
-  if (text.includes('weather')) {
-    const res = await fetch('/api/weather');
-    const data = await res.json();
-    return data.weather as string;
-  }
-
-  if (text.includes('joke')) {
-    const res = await fetch('/api/joke');
-    const data = await res.json();
-    return data.joke as string;
-  }
-
-  if (text.includes('uber')) {
-    return 'Requesting a ride via Uber...';
-  }
-
-  return "Sorry I can't do that right now.";
+async function handleInput(text: string): Promise<string> {
+  const res = await fetch('/api/handle', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ text }),
+  });
+  const data = await res.json();
+  return data.reply as string;
 }
 
 interface Message {
