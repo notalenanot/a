@@ -5,8 +5,15 @@ import fetch from 'node-fetch';
  */
 export async function getJoke(): Promise<string> {
   const url = 'https://v2.jokeapi.dev/joke/Any?type=single';
-  const res = await fetch(url);
-  const data: any = await res.json();
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error('Unable to fetch joke.');
+    }
+    const data: any = await res.json();
 
-  return data?.joke || 'No joke available.';
+    return data?.joke || 'No joke available.';
+  } catch {
+    throw new Error('Unable to fetch joke.');
+  }
 }
