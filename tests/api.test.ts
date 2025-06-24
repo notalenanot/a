@@ -16,6 +16,7 @@ describe('API endpoints', () => {
 
   test('/api/joke returns joke json', async () => {
     mockedFetch.mockResolvedValue({
+      ok: true,
       json: async () => ({ joke: 'Funny' }),
     } as any);
 
@@ -26,6 +27,7 @@ describe('API endpoints', () => {
 
   test('/api/weather returns weather json', async () => {
     mockedFetch.mockResolvedValue({
+      ok: true,
       json: async () => ({
         current_weather: { temperature: 20 },
         current_weather_units: { temperature: '°C' },
