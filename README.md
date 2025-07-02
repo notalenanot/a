@@ -20,9 +20,13 @@ examples/
   workflows/
 ```
 
-The backend exposes two endpoints under `/api` which return a random joke and
-current weather information.  The React application located in `my-app/`
-includes a simple chat UI that calls these endpoints.
+The backend exposes several endpoints under `/api`:
+
+- `/api/joke` returns a random joke.
+- `/api/weather` returns current weather information.
+- `/api/foia` generates a FOIA request letter when provided request details.
+
+The React application located in `my-app/` includes a simple chat UI that calls these endpoints.
 
 Additional capabilities include:
 - Voice input and output powered by the Web Speech API.

@@ -1,9 +1,12 @@
 import express from 'express';
 import { getJoke } from './api/joke';
 import { getWeather } from './api/weather';
+import { generateFoiaLetter } from './api/foia';
 
 export const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(express.json());
 
 app.get('/api/joke', async (_, res) => {
   try {
@@ -24,6 +27,16 @@ app.get('/api/weather', async (req, res) => {
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Failed to fetch weather';
     res.status(500).json({ error: message });
+  }
+});
+
+app.post('/api/foia', (req, res) => {
+  try {
+    const letter = generateFoiaLetter(req.body);
+    res.json({ letter });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to generate letter';
+    res.status(400).json({ error: message });
   }
 });
 
