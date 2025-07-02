@@ -34,6 +34,12 @@ Additional capabilities include:
 - Embedding-based search with cosine similarity.
 
 
+## Network access
+
+The `/api/joke` and `/api/weather` routes fetch data from external APIs. If
+the server cannot reach the internet these requests will fail and the endpoints
+will return an error.
+
 ## Development
 
 Install dependencies and start the development server:
