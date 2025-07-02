@@ -1,0 +1,12 @@
+prometheus:
+  endpoint: "http://localhost:9090"
+  metrics:
+    - rack_power_watts
+    - inlet_temp_c
+racks:
+  - name: "node0"
+    power_cap_bounds: [150, 300]
+reward:
+  weights:
+    kwh: 1.0
+    latency: 0.1

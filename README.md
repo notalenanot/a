@@ -59,3 +59,25 @@ A simple p5.js demo is available in `examples/p5-spiral`. Open `index.html` in a
 ## License
 
 This project is released under the [MIT License](LICENSE).
+
+## RL Scheduler PoC
+
+A lightweight Python 3.11 micro-service lives under `src/green_ai/`. It exposes a
+FastAPI app with two endpoints:
+
+- `POST /step` – performs one reinforcement-learning step using rack telemetry
+  from Prometheus.
+- `GET /metrics` – Prometheus-scrapable metrics for Grafana dashboards.
+
+### Running locally
+
+```bash
+poetry install
+uvicorn src.green_ai.service:app --reload
+```
+
+Synthetic load simulation:
+
+```bash
+make simulate
+```
