@@ -11,7 +11,8 @@
   "dependencies": {
     "@types/express": "^5.0.3",
     "express": "^4.21.2",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.7"
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
@@ -20,6 +21,7 @@
     "ts-jest": "^29.1.1",
     "@types/jest": "^29.5.10",
     "supertest": "^6.3.3",
-    "@types/supertest": "^2.0.12"
+    "@types/supertest": "^2.0.12",
+    "@types/nodemailer": "^6.4.7"
   }
 }
