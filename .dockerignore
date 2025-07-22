@@ -1,0 +1,5 @@
+node_modules
+dist
+my-app/node_modules
+my-app/dist
+tests
